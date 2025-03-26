@@ -7,6 +7,7 @@
 
 A simple tracking pixel service built with Spring Boot. This service records visitor information such as IP address, user agent, and referer when the tracking pixel is accessed.
 
+
 ## Endpoints
 |         | Description                          | Endpoint   |
 |---------------|----------------------------------|------|
@@ -21,6 +22,14 @@ A simple tracking pixel service built with Spring Boot. This service records vis
 | **Delete Tracking Entry**       | Deletes a tracking entry by ID. | `DELETE /tracking/{id}` |
 
 ---
+
+### How to Add the Tracking Pixel Image
+
+You can add the tracking pixel image to any HTML page using the following code:
+
+```html
+<img src="http://localhost:8081/pixel" alt="Tracking Pixel" />
+```
 
 ## License
 
