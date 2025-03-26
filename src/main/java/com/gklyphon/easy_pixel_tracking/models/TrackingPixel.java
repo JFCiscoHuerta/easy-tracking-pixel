@@ -13,7 +13,6 @@ public class TrackingPixel extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String ip;
     private String userAgent;
     private String referer;
