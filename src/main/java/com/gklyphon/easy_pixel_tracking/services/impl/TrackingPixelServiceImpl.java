@@ -39,14 +39,14 @@ public class TrackingPixelServiceImpl implements ITrackingPixelService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<TrackingPixel> findByUserAgentByCreatedAt(String userAgent, Pageable pageable) {
-        return trackingPixelRepository.findByUserAgentByCreatedAt(userAgent, pageable);
+    public Page<TrackingPixel> findByUserAgentOrderByCreatedAt(String userAgent, Pageable pageable) {
+        return trackingPixelRepository.findByUserAgentOrderByCreatedAt(userAgent, pageable);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Page<TrackingPixel> findByRefererByCreatedAt(String referer, Pageable pageable) {
-        return trackingPixelRepository.findByRefererByCreatedAt(referer, pageable);
+    public Page<TrackingPixel> findByRefererOrderByCreatedAt(String referer, Pageable pageable) {
+        return trackingPixelRepository.findByRefererOrderByCreatedAt(referer, pageable);
     }
 
     @Override

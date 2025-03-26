@@ -8,8 +8,8 @@ public interface ITrackingPixelService {
     Page<TrackingPixel> findAll(Pageable pageable);
     Page<TrackingPixel> findAllByOrderByCreatedAt(Pageable pageable);
     Page<TrackingPixel> findByIpOrderByCreatedAt(String ip, Pageable pageable);
-    Page<TrackingPixel> findByUserAgentByCreatedAt(String userAgent, Pageable pageable);
-    Page<TrackingPixel> findByRefererByCreatedAt(String referer, Pageable pageable);
+    Page<TrackingPixel> findByUserAgentOrderByCreatedAt(String userAgent, Pageable pageable);
+    Page<TrackingPixel> findByRefererOrderByCreatedAt(String referer, Pageable pageable);
 
     TrackingPixel findById(Long id);
     TrackingPixel save(TrackingPixel trackingPixel);
