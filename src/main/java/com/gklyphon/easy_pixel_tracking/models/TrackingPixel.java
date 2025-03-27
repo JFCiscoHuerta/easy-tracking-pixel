@@ -2,6 +2,12 @@ package com.gklyphon.easy_pixel_tracking.models;
 
 import jakarta.persistence.*;
 
+/**
+ * Represents a tracking pixel entity that records user interactions.
+ *
+ * @author JFCiscoHuerta
+ * @date 2025-03-26
+ */
 @Entity
 @Table(name = "tracking_pixel")
 public class TrackingPixel extends Auditable {
@@ -9,13 +15,36 @@ public class TrackingPixel extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    /**
+     * IP address of the user triggering the tracking pixel.
+     */
     private String ip;
+
+    /**
+     * User agent string of the browser or device accessing the tracking pixel.
+     */
     private String userAgent;
+
+    /**
+     * Referrer URL from which the tracking pixel was accessed.
+     */
     private String referer;
 
+    /**
+     * Default constructor.
+     */
     public TrackingPixel() {
     }
 
+    /**
+     * Parameterized constructor to initialize a TrackingPixel instance.
+     *
+     * @param id        the unique identifier
+     * @param ip        the IP address of the user
+     * @param userAgent the user agent string
+     * @param referer   the referrer URL
+     */
     public TrackingPixel(Long id, String ip, String userAgent, String referer) {
         this.id = id;
         this.ip = ip;
@@ -55,6 +84,11 @@ public class TrackingPixel extends Auditable {
         this.referer = referer;
     }
 
+    /**
+     * Constructs a TrackingPixel instance using a builder pattern.
+     *
+     * @param builder the builder instance
+     */
     public TrackingPixel(Builder builder) {
         this.id = builder.id;
         this.ip = builder.ip;
@@ -62,6 +96,9 @@ public class TrackingPixel extends Auditable {
         this.referer = builder.referer;
     }
 
+    /**
+     * Builder class for constructing TrackingPixel instances.
+     */
     public static class Builder {
         private Long id;
         private String ip;
@@ -83,6 +120,11 @@ public class TrackingPixel extends Auditable {
             return this;
         }
 
+        /**
+         * Builds and returns a TrackingPixel instance.
+         *
+         * @return a new TrackingPixel instance
+         */
         public TrackingPixel build() {
             return new TrackingPixel(this);
         }
